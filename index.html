@@ -119,12 +119,16 @@ saveBtn i:hover. -->
 
         var timeblock = moment().format('LLLL');
 
-        $("#currentDay").text(timeblock);
+        // console.log(timeblock);
+        
+          $("#currentDay").text(timeblock);
       
 //*My asttempt to make save button.
         $("#saveBtn").on("click", function() {
 
           var textarea = $("textarea").value;
+
+        // console.log(textarea);
 
            $(textarea).on('unload', function(){
             saveSettings();
@@ -133,11 +137,11 @@ saveBtn i:hover. -->
 	        
         function loadSettings() {
 		      $("#textarea").val(localStorage.textarea);
-	      }
+	      };
 
 	      function saveSettings() {
 		      localStorage.textarea = $("#textarea").val();
-        }
+        };
 
         var present = $("presnt");
         var past = $("past");
@@ -147,21 +151,18 @@ saveBtn i:hover. -->
 
         if (hour = timeblock){
           row = present
-        }
+        };
           
         if (hour > timeblock){ 
           row = future
-        }
+        };
 
         if (hour < timeblock){  
           row = past
-        }  
-
-        console.log(timeblock);
-        console.log(textarea);
-        console.log(present);
-        console.log(past);
-        console.log(future);
+        };  
+        // console.log(present);
+        // console.log(past);
+        // console.log(future);
       }); 
     </script>
   </body>
