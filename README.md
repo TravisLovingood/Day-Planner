@@ -12,7 +12,6 @@
 
 ## Description
 
-
 ```
 As a employee with a busy schedule,
 I want to add important events to a daily planner.
@@ -22,7 +21,7 @@ so that I can manage my time effectively.
 
 ## Usage
 
-undefined
+Go to [Day-Planner](https://travislovingood.github.io/Day-Planner/) and enjoy.
 
 ## License
 
