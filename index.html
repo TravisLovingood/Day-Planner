@@ -1,171 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Work Day Scheduler</title>
-  </head>
 
-  <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Day Scheduler</h1>
-      <p class="lead">Get up on your schedule dogg!!!</p>
-      <p id="currentDay" class="lead"></p>
-    </header>
-    
-    <div class="container">
-      <div class="w-100"></div>      
-      <div class="row">
-        <div class="col-md-1" id="hour">9am</div>
-        <textarea class="col-md-10" id="textarea"></textarea>
-        <button class="saveBtn">&#128190;</button>
-      </div>
-      <div class="w-100"></div>      
-      <div class="row">
-        <div class="col-md-1" id="hour">10am</div>
-        <textarea class="col-md-10" id="textarea"></textarea>
-        <button class="saveBtn">&#128190;</button>
-      </div>
-      <div class="w-100"></div>      
-      <div class="row">
-        <div class="col-md-1" id="hour">11am</div>
-        <textarea class="col-md-10" id="textarea"></textarea>
-        <button class="saveBtn">&#128190;</button>
-      </div>
-      <div class="w-100"></div>
-      <div class="row">
-        <div class="col-md-1" id="hour">12am</div>
-        <textarea class="col-md-10" id="textarea"></textarea>
-        <button class="saveBtn">&#128190;</button>
-      </div>
-      <div class="w-100"></div>      
-      <div class="row">
-        <div class="col-md-1" id="hour">1pm</div>
-        <textarea class="col-md-10" id="textarea"></textarea>
-        <button class="saveBtn">&#128190;</button>
-      </div>
-      <div class="w-100"></div>      
-      <div class="row">
-        <div class="col-md-1" id="hour">2pm</div>
-        <textarea class="col-md-10" id="textarea"></textarea>
-        <button class="saveBtn">&#128190;</button>
-      </div>
-      <div class="w-100"></div>      
-      <div class="row">
-        <div class="col-md-1" id="hour">3pm</div>
-        <textarea class="col-md-10" id="textarea"></textarea>
-        <button class="saveBtn">&#128190;</button>
-      </div>
-      <div class="w-100"></div>
-      <div class="row">
-        <div class="col-md-1" id="hour">4pm</div>
-        <textarea class="col-md-10" id="textarea"></textarea>
-        <button class="saveBtn">&#128190;</button>
-      </div>
-      <div class="w-100"></div>      
-      <div class="row">
-        <div class="col-md-1" id="hour">5pm</div>
-        <textarea class="col-md-10" id="textarea"></textarea>
-        <button class="saveBtn">&#128190;</button>
-      </div>
-      <div class="w-100"></div>
-    </div> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Work Day Scheduler</title>
+</head>
 
-<!-- To Do List
--make save button, save notes from "textarea".
--make date show up in id="currentDay"
--make affects for(past, present, future)
-code from moments.js (date)----moment().format('MMMM Do YYYY, h:mm:ss a');
+<body>
+  <header class="jumbotron">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <p id="currentDay" class="lead"></p>
+  </header>
+  <main class="container"></main>
 
-* [moments]    (https://momentjs.com/)
-* [MDN: jQuery](https://developer.mozilla.org/en-US/docs/Glossary/jQuery)
-* [Wikipedia: jQuery](https://en.wikipedia.org/wiki/JQuery)
-* [jQuery Website](https://jquery.com/)
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
-Ids in css= body,
-textarea,
-jumbotron,
-description, 
-time-block, 
-row,
-hour, 
-saveBtn, 
-past, 
-present, 
-future, 
-saveBtn i:hover. -->
+  <script src="storage.js"></script>
+  <script src="script.js"></script>
+</body>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script>
-// for date at top
-      $(document).ready(function() {
-
-        var timeblock = moment().format('LLLL');
-
-        // console.log(timeblock);
-        
-          $("#currentDay").text(timeblock);
-      
-//*My asttempt to make save button.
-        $("#saveBtn").on("click", function() {
-
-          var textarea = $("textarea").value;
-
-        // console.log(textarea);
-
-           $(textarea).on('unload', function(){
-            saveSettings();
-            loadSettings();
-          });
-	        
-        function loadSettings() {
-		      $("#textarea").val(localStorage.textarea);
-	      };
-
-	      function saveSettings() {
-		      localStorage.textarea = $("#textarea").val();
-        };
-
-        var present = $("presnt");
-        var past = $("past");
-        var future = $("future");
-        var hour = $("hour");
-        var row = $("row");    
-
-        if (hour = timeblock){
-          row = present
-        };
-          
-        if (hour > timeblock){ 
-          row = future
-        };
-
-        if (hour < timeblock){  
-          row = past
-        };  
-        // console.log(present);
-        // console.log(past);
-        // console.log(future);
-      }); 
-    </script>
-  </body>
-
-  <footer class="Yeah"><h2>Yeah Yeah!</h2></footer>
 </html>
