@@ -33,5 +33,4 @@ This project has no License.
 
 If you have any questions about the repo, open an issue or contact directly at [Day-Planner](https://github.com/TravisLovingood/Day-Planner).
 
-
-[My Portfolio](https://travislovingood.github.io/Portfolio/).
+Also please take a look at [My Portfolio](https://travislovingood.github.io/Portfolio/).
